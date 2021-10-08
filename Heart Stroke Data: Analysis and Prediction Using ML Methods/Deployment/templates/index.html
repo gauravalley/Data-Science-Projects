@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Stroke Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<h3>Age</h3><input type="text" name="age" placeholder="Age" required="required" />
+        <h3>Presence of hypertension</h3><select type="text" name="hypertension" placeholder="Hypertension" required="required" >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+		<h3>History of heart disease</h3><select type="text" name="heart_disease" placeholder="Heart Disease" required="required" >
+    		<option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+		<h3>Average Glucose Level</h3><input type="text" name="avg_glucose_level" placeholder="Average Glucose Level" required="required" />
+		<h3>BMI</h3><input type="text" name="bmi" placeholder="BMI" required="required" />
+		<h3>Gender</h3><select type="text" name="gender_Male" placeholder="Gender" required="required" >
+    		<option value="Female">Female</option>
+    		<option value="Male">Male</option>
+            <option value="Other">Other</option>
+        </select>
+        <h3>Marital status</h3><select type="text" name="ever_married_Yes" placeholder="Ever Married" required="required" >
+    		<option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <h3>Job type</h3><select type="text" name="work_type_Never_worked" placeholder="Work Type" required="required" >
+            <option value="Govt_job">Goverment</option> 
+    		<option value="Never_worked">Never</option>
+    		<option value="Private">Private</option>
+            <option value="Self_employed">Self</option>  
+            <option value="Children">Children</option> 
+        </select>  
+        <h3>Residence type</h3><select type="text" name="Residence_type_Urban" placeholder="Residence Type" required="required" >
+            <option value="Urban">Urban</option>
+            <option value="Rural">Rural</option>
+        </select>
+        <h3>Smoking status</h3><select type="text" name="smoking_status_formerly_smoked" placeholder="Smoking Status" required="required" >
+            <option value="smoking_status_formerly_smoked">Formerly</option> 
+    		<option value="smoking_status_never_smoked">Never</option>
+    		<option value="smoking_status_smokes">Currently</option>
+            <option value="smoking_status_Unknown">Unknown</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
