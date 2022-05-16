@@ -5,4 +5,6 @@ This is a collection of Machine Learning and Data Analysis projects that I've do
 2. Flight Fare Data: Analysis and Prediction Using ML Methods
 3. Heart Stroke Data: Analysis and Prediction Using ML Methods
 4. What Beatles Song Is That?
+  A model that recognizes the title of any Beatles song when you feed in the lyrics; constructed with data extracted from the Genius website using Genius API and the lyricsgenius Python library.
 5. What Movie Should I Watch Next?
+  A content-based movie recommendation system created using datasets extracted from the TMDB website through the TMDB API. 
